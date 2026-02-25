@@ -116,4 +116,15 @@ let carrito = [
 let productosCaros = carrito.filter(item => item.precio > 15)
 
 
+const productos = [
+  { id: 1, nombre: "Leche", precio: 1.5, enOferta: false },
+  { id: 2, nombre: "Pan", precio: 1.0, enOferta: false },
+  { id: 3, nombre: "Café", precio: 5.0, enOferta: false }
+];
 
+const ponerEnOferta = (idTarget) => {
+  const listaNueva = productos.map(item => item.id === idTarget ? {...item, enOferta: true, precio: item.precio * 0.8} : item);
+  return listaNueva; 
+}
+
+const productosBaratos = productos.filter (item => item.precio < 2.0);
