@@ -81,4 +81,39 @@ const ListaDeTareas = () => {
 
 
 
-AudioParamMap
+let stock = 5;
+let mensaje = stock > 0 ? "Disponible" : "Agotado";
+
+
+
+
+
+let puntos = 120;
+let nivel = puntos >= 100 ? "Premium" : "Estandar";
+
+
+
+
+let monitor = {
+  id: 10,
+  modelo: "UltraWide",
+  precio: 300
+};
+
+let monitorRebajado = {...monitor, precio: 250 }; 
+
+let preciosRebajados = carrito.map(item => item.precio / 2);
+
+
+let carritoActualizado = carrito.map(item => ({ ...item, modelo: "oferta"}));
+
+let carrito = [
+  { producto: "Teclado", precio: 20 },
+  { producto: "Monitor", precio: 200 },
+  { producto: "Mouse", precio: 10 }
+];
+
+let productosCaros = carrito.filter(item => item.precio > 15)
+
+
+
